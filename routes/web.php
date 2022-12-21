@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RiwayatKerjaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+//user
+Route::get('/user/data', [AuthController::class, 'getweb']);
+
+//workexp
+Route::get('/user/data/workexp', [RiwayatKerjaController::class, 'getworkexpweb']);
